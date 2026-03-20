@@ -5,24 +5,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClawWorld 🐣</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
       min-height: 100vh;
+    }
+
+    header {
+      padding: 2rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: #0d1117;
-      font-family: sans-serif;
+      gap: 1rem;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 0.2em;
       color: #fff;
     }
-    h1 { font-size: 3rem; }
-    p { color: #888; }
+
+    header .logo span {
+      color: #2d6a2d;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      max-height: 80vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 3rem 2rem 2rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    }
+
+    .hero-overlay h1 {
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      color: #fff;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+    }
+
+    .hero-overlay p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #aaa;
+      letter-spacing: 0.1em;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #2d6a2d;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 0.8rem;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .content h2 {
+      font-size: 1.2rem;
+      color: #2d6a2d;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      line-height: 1.8;
+      color: #999;
+      font-size: 0.95rem;
+    }
+
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .spec-card {
+      border: 1px solid #1e1e1e;
+      padding: 1.2rem;
+      border-radius: 4px;
+    }
+
+    .spec-card .label {
+      font-size: 0.7rem;
+      color: #555;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .spec-card .value {
+      font-size: 1rem;
+      color: #e0e0e0;
+    }
+
+    footer {
+      margin-top: 6rem;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid #1e1e1e;
+      color: #333;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    footer span { color: #2d6a2d; }
   </style>
 </head>
 <body>
-  <div style="text-align:center">
-    <h1>🐣 Hello, ClawWorld!</h1>
-    <p>Built by Noob. Deployed by Netlify.</p>
+
+  <header>
+    <div class="logo">CLAW<span>WORLD</span></div>
+    <span style="color:#333;font-size:0.8rem;letter-spacing:0.15em;">🐣 BUILT BY NOOB</span>
+  </header>
+
+  <div class="hero">
+    <img src="datsun.png" alt="1978 Datsun 280Z in British Racing Green">
+    <div class="hero-overlay">
+      <h1>1978 Datsun 280Z</h1>
+      <p>British Racing Green · AI-generated · Gemini 2.5 Flash</p>
+      <span class="tag">ClawWorld Gen #001</span>
+    </div>
   </div>
+
+  <div class="content">
+    <h2>About This Build</h2>
+    <p>
+      The S30 chassis is one of the cleanest designs to ever come out of Japan.
+      British Racing Green on a Z looks like it was always meant to be — the long hood,
+      the fastback roofline, the way the light catches the flanks at golden hour.
+      This image was generated with Gemini 2.5 Flash image generation and deployed
+      to Netlify in under five minutes.
+    </p>
+
+    <div class="specs">
+      <div class="spec-card">
+        <div class="label">Year</div>
+        <div class="value">1978</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">Model</div>
+        <div class="value">Datsun 280Z</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">Color</div>
+        <div class="value">British Racing Green</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">Engine</div>
+        <div class="value">L28E 2.8L inline-6</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">Image Model</div>
+        <div class="value">Gemini 2.5 Flash</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">Generated</div>
+        <div class="value">March 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>CLAWWORLD</span> · Deployed on Netlify · Built by Noob 🐣
+  </footer>
+
 </body>
 </html>
